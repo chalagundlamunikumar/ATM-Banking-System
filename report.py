@@ -10,7 +10,7 @@ def export_to_pdf(account_name, account_number, balance, transactions):
     pdf = FPDF()
     pdf.add_page()
 
-    # -------- BANK HEADER --------
+    
     pdf.image("image.png", 10, 8, 25)
 
     pdf.set_font("Arial", "B", 16)
@@ -21,7 +21,7 @@ def export_to_pdf(account_name, account_number, balance, transactions):
     pdf.cell(0, 8, f"Branch : {BRANCH_NAME}", ln=True, align="C")
     pdf.ln(8)
 
-    # -------- ACCOUNT DETAILS --------
+    
     pdf.set_font("Arial", "B", 12)
     pdf.cell(0, 8, "Account Statement", ln=True)
     pdf.ln(4)
@@ -32,7 +32,7 @@ def export_to_pdf(account_name, account_number, balance, transactions):
     pdf.cell(0, 8, f"Statement Generated : {datetime.now()}", ln=True)
     pdf.ln(6)
 
-    # -------- TRANSACTION HISTORY --------
+    
     pdf.set_font("Arial", "B", 12)
     pdf.cell(0, 8, "Transaction History", ln=True)
     pdf.ln(4)
@@ -47,12 +47,12 @@ def export_to_pdf(account_name, account_number, balance, transactions):
 
     pdf.ln(6)
 
-    # -------- FINAL BALANCE --------
+   
     pdf.set_font("Arial", "B", 12)
     pdf.cell(0, 8, f"Final Available Balance : Rs. {balance}", ln=True)
 
 
-    # -------- MANAGER SIGNATURE --------
+    
     pdf.ln(15)
     pdf.image("sign.png", 140, pdf.get_y(), 40)
 
